@@ -1,0 +1,163 @@
+body, h1, h2, h3, h4, h5, h6, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Flexbox for layout */
+#admin-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* CSS for Sidebar */
+#side-bar {
+    width: 250px;
+    background: linear-gradient(to top, #7474A0 0%, #ffffff 50%, #7474A0 100%),
+    linear-gradient(to bottom, #7474A0 0%, #ffffff 50%, #7474A0 100%);
+    background-blend-mode: screen;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed; /* Tetapkan sidebar di tempat */
+    height: 100vh; /* Gunakan tinggi layar penuh */
+    overflow-y: auto; /* Tambahkan overflow jika isi sidebar panjang */
+}
+
+/* CSS for Main Content */
+#main-content {
+    flex: 1;
+    padding: 40px;
+    background-color: #fff;
+    margin-left: 250px; /* Sesuaikan margin agar konten tidak tertutup oleh sidebar */
+    overflow-y: auto; /* Biarkan konten utama dapat di-scroll */
+}
+
+
+#side-bar .logo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 50px; /* Adjusted margin-top */
+    margin-bottom: 20px;
+}
+
+#side-bar .logo img {
+    max-width: 50%; /* Adjusted max-width */
+    height: auto;
+}
+
+#side-bar ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+#side-bar ul li {
+    margin: 20px 0;
+}
+
+#side-bar ul li a {
+    color: #fff; /* Changed text color */
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#side-bar ul li a:hover {
+    background-color: #4848A4;
+}
+
+
+.content-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.content-container h2 {
+    margin-top: 0;
+    color: #007bff;
+    font-size: 24px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #admin-wrapper {
+        flex-direction: column;
+    }
+
+    #side-bar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+    }
+
+    #side-bar ul {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #side-bar ul li {
+        margin: 0 10px;
+    }
+
+    #main-content {
+        padding: 20px;
+    }
+
+    #side-bar .logo {
+        margin-top: 20px; /* Adjusted margin-top for logo */
+    }
+}
