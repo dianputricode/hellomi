@@ -5,52 +5,47 @@
 @section('content')
     @auth
     <div class="edit-product-container">
-        <h2>Edit Product</h2>
+        <h2>Edit Produk</h2>
         <form action="{{ route('product.update', $product->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
             <div class="form-group">
-                <label for="product_name">Product Name</label>
+                <label for="product_name">Nama Produk</label>
                 <input id="product_name" type="text" name="product_name" value="{{ old('product_name', $product->product_name) }}" required>
             </div>
 
             <div class="form-group">
-                <label for="price">Price</label>
+                <label for="price">Harga</label>
                 <input id="price" type="number" name="price" value="{{ old('price', $product->price) }}" required>
             </div>
 
             <div class="form-group">
-                <label for="material">Material</label>
+                <label for="material">Bahan</label>
                 <input id="material" type="text" name="material" value="{{ old('material', $product->material) }}" required>
             </div>
 
             <div class="form-group">
-                <label for="weight">Weight</label>
+                <label for="weight">Berat</label>
                 <input id="weight" type="text" name="weight" value="{{ old('weight', $product->weight) }}">
             </div>
 
             <div class="form-group">
-                <label for="capacity">Capacity</label>
+                <label for="capacity">Kapasitas</label>
                 <input id="capacity" type="text" name="capacity" value="{{ old('capacity', $product->capacity) }}">
             </div>
 
             <div class="form-group">
-                <label for="dimensions">Dimensions</label>
+                <label for="dimensions">Dimensi</label>
                 <input id="dimensions" type="text" name="dimensions" value="{{ old('dimensions', $product->dimensions) }}">
             </div>
 
             <div class="form-group">
-                <label for="stock">Stock</label>
-                <input id="stock" type="number" name="stock" value="{{ old('stock', $product->stock) }}" required>
-            </div>
-
-            <div class="form-group">
-                <label for="product_image">Product Image</label>
+                <label for="product_image">Foto Produk</label>
                 <input id="product_image" type="file" name="product_image">
                 @if($product->product_image)
                     <div class="current-image">
-                        <p>Current Image:</p>
+                        <p>Foto produk sekarang:</p>
                         <img src="{{ asset('storage/' . $product->product_image) }}" alt="{{ $product->product_name }}" width="200">
                     </div>
                 @endif
