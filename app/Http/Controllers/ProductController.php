@@ -66,7 +66,6 @@ class ProductController extends Controller
             'weight' => 'nullable|string',
             'capacity' => 'nullable|string',
             'dimensions' => 'nullable|string',
-            'stock' => 'required|integer|min:0',
         ]);
 
         if ($request->hasFile('product_image')) {
@@ -89,7 +88,6 @@ class ProductController extends Controller
             'weight' => $request->weight,
             'capacity' => $request->capacity,
             'dimensions' => $request->dimensions,
-            'stock' => $request->stock,
         ]);
 
         return redirect()->route('product.index')->with('success', 'Produk berhasil diperbarui.');
