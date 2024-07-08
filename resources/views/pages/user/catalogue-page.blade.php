@@ -52,7 +52,7 @@
                                 <div class="rating">
                                     @for ($i = 1; $i <= 5; $i++)
                                         @if ($product->average_rating)
-                                            <i class="fas fa-star{{ $i <= $product->average_rating ? ' checked' : '' }}" ></i>
+                                            <i class="fas fa-star{{ $i <= $product->average_rating ? ' checked' : '' }}"></i>
                                         @else
                                             <span class="fa fa-star"></span>
                                         @endif
