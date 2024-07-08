@@ -21,7 +21,7 @@
             </div>
 
             <div class="btn-edit-profil">
-                <a href="{{ url('/profile/edit') }}">Edit Profil</a>
+                <a href="{{ url('/profil/edit') }}">Edit Profil</a>
             </div>
         </div>
 
